@@ -24,7 +24,7 @@ class Square(Node):
 
         if step < 20:
 
-            msg.linear.x = 0.5              # 最初の2秒はまっすぐ進む
+            msg.linear.x = 1.0              # 最初の2秒はまっすぐ進む
 
         else:
 
