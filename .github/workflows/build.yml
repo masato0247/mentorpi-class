@@ -1,0 +1,48 @@
+name: build
+ 
+on:
+
+  pull_request:
+
+  push:
+
+    branches: [main]
+ 
+jobs:
+
+  build:
+
+    runs-on: ubuntu-22.04
+
+    container: ros:humble
+
+    steps:
+
+      - uses: actions/checkout@v4
+ 
+      - name: Pythonの文法チェック
+
+        run: python3 -m compileall -q src
+ 
+      - name: 依存パッケージのインストール
+
+        shell: bash
+
+        run: |
+
+          apt-get update
+
+          rosdep update
+
+          rosdep install --from-paths src --ignore-src -y
+ 
+      - name: ビルド
+
+        shell: bash
+
+        run: |
+
+          source /opt/ros/humble/setup.bash
+
+          colcon build
+ 
