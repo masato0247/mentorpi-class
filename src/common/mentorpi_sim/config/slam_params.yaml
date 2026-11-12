@@ -1,0 +1,31 @@
+slam_toolbox:
+  ros__parameters:
+    use_sim_time: true
+ 
+    # 位置関係（TF）の名前
+    odom_frame: odom
+    map_frame: map
+    base_frame: base_link
+ 
+    # LiDARのトピック名
+    scan_topic: /scan_raw
+ 
+    # 地図を作るモード
+    mode: mapping
+ 
+    # 地図の細かさ（1マス5cm）
+    resolution: 0.05
+    # LiDARの最大距離（シミュレータのLiDARに合わせる）
+    max_laser_range: 8.0
+ 
+    # どれだけ動いたら新しいデータを地図に足すか
+    minimum_travel_distance: 0.2
+    minimum_travel_heading: 0.2
+    minimum_time_interval: 0.5
+ 
+    # 地図を更新する間隔（秒）
+    map_update_interval: 2.0
+    transform_publish_period: 0.02
+ 
+    # 同じ場所に戻ってきたとき、ずれを直す
+    do_loop_closing: true
