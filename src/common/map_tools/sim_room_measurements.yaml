@@ -1,0 +1,57 @@
+# シミュレータの部屋で測る場所と、正解の寸法（単位：m）
+
+# 座標は、地図作成を始めたときのロボットの位置が (0, 0)、ロボットの前が x、左が y
+
+# point：測り始める点（何もない場所を選ぶ）
+
+# direction：測る向き（x、y、または角度[度]）。point から両側の壁までの距離を足した値を測る
+
+measurements:
+
+  - name: W_x          # 部屋の内側の幅（x方向）
+
+    point: [0.0, 0.5]
+
+    direction: x
+
+    truth: 4.95
+
+  - name: W_y          # 部屋の内側の幅（y方向）
+
+    point: [0.5, 0.0]
+
+    direction: y
+
+    truth: 4.95
+
+  - name: G_box_west   # 箱と西の壁のすき間
+
+    point: [-1.8, -1.2]
+
+    direction: x
+
+    truth: 1.125
+
+  - name: G_box_east   # 箱と東の壁のすき間
+
+    point: [0.5, -1.2]
+
+    direction: x
+
+    truth: 3.525
+
+  - name: G_box_south  # 箱と南の壁のすき間
+
+    point: [-1.2, -1.8]
+
+    direction: y
+
+    truth: 1.125
+
+  - name: G_box_north  # 箱と北の壁のすき間
+
+    point: [-1.2, 0.5]
+
+    direction: y
+
+    truth: 3.525
