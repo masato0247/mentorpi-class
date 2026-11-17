@@ -1,4 +1,4 @@
-# シミュレータの部屋で測る場所と、正解の寸法（単位：m）
+# シミュレータの部屋（厚い壁・柱・障害物つき）で測る場所と、正解の寸法（単位：m）
 
 # 座標は、地図作成を始めたときのロボットの位置が (0, 0)、ロボットの前が x、左が y
 
@@ -8,50 +8,83 @@
 
 measurements:
 
-  - name: W_x          # 部屋の内側の幅（x方向）
+  - name: W_x            # 部屋の内側の幅（x方向）
 
-    point: [0.0, 0.5]
+    point: [0.0, -0.3]
 
     direction: x
 
-    truth: 4.95
+    truth: 5.0
 
-  - name: W_y          # 部屋の内側の幅（y方向）
+  - name: W_y            # 部屋の内側の幅（y方向）
 
-    point: [0.5, 0.0]
+    point: [0.3, 0.0]
 
     direction: y
 
-    truth: 4.95
+    truth: 5.0
 
-  - name: G_box_west   # 箱と西の壁のすき間
+  - name: W_pillar_n     # 北の柱の面から南の壁まで（柱の出っ張り20cm分だけ狭い）
+
+    point: [-0.8, 0.0]
+
+    direction: y
+
+    truth: 4.8
+
+  - name: W_pillar_e     # 東の柱の面から西の壁まで（柱の出っ張り20cm分だけ狭い）
+
+    point: [0.0, 0.6]
+
+    direction: x
+
+    truth: 4.8
+
+  - name: G_boxA_west    # 箱Aと西の壁のすき間
 
     point: [-1.8, -1.2]
 
     direction: x
 
-    truth: 1.125
+    truth: 1.15
 
-  - name: G_box_east   # 箱と東の壁のすき間
-
-    point: [0.5, -1.2]
-
-    direction: x
-
-    truth: 3.525
-
-  - name: G_box_south  # 箱と南の壁のすき間
+  - name: G_boxA_south   # 箱Aと南の壁のすき間
 
     point: [-1.2, -1.8]
 
     direction: y
 
-    truth: 1.125
+    truth: 1.15
 
-  - name: G_box_north  # 箱と北の壁のすき間
+  - name: G_boxB_north   # 箱Bと北の壁のすき間
 
-    point: [-1.2, 0.5]
+    point: [1.2, 2.0]
 
     direction: y
 
-    truth: 3.525
+    truth: 1.05
+
+  - name: G_boxB_east    # 箱Bと東の壁のすき間
+
+    point: [2.0, 1.3]
+
+    direction: x
+
+    truth: 1.0
+
+  - name: G_cyl_east     # 円柱と東の壁のすき間（円柱の中心を通る線）
+
+    point: [2.0, -1.1]
+
+    direction: x
+
+    truth: 1.05
+
+  - name: G_cyl_south    # 円柱と南の壁のすき間（円柱の中心を通る線）
+
+    point: [1.3, -2.0]
+
+    direction: y
+
+    truth: 1.25
+ 
