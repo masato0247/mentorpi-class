@@ -104,7 +104,7 @@ def generate_launch_description():
 
         output='screen')
  
-    # ロボットの中心(base_link)から見たLiDAR(lidar_link)の位置：真上11cm
+    # ロボットの中心(base_link)から見たLiDAR(lidar_link)の位置：真上14.5cm
 
     lidar_tf = Node(
 
@@ -112,7 +112,7 @@ def generate_launch_description():
 
         executable='static_transform_publisher',
 
-        arguments=['--x', '0', '--y', '0', '--z', '0.11',
+        arguments=['--x', '-0.02', '--y', '0', '--z', '0.145',
 
                    '--frame-id', 'base_link', '--child-frame-id', 'lidar_link'],
 

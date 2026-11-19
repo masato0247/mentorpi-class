@@ -39,7 +39,7 @@ def generate_launch_description():
 
         executable='static_transform_publisher',
 
-        arguments=['--x', '0', '--y', '0', '--z', '0.11',
+        arguments=['--x', '-0.02', '--y', '0', '--z', '0.145',
 
                    '--frame-id', 'base_link', '--child-frame-id', 'lidar_link'],
 
