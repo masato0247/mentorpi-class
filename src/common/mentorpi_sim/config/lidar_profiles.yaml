@@ -1,0 +1,16 @@
+# シミュレータのLiDARの設定（起動するときに lidar:=A などで選ぶ）
+# samples      ：1周で測る点の数（360なら1°ごと、500なら約0.72°ごと）
+# range_min/max：測れる最短・最長の距離[m]
+# noise_stddev ：測った距離に加える誤差の大きさ（標準偏差）[m]
+ 
+A:   # 理想のLiDAR（誤差なし）
+  samples: 360
+  range_min: 0.05
+  range_max: 8.0
+  noise_stddev: 0.0
+ 
+B:   # STL-19P（仕様書の値をもとにした仮の値）
+  samples: 500
+  range_min: 0.03
+  range_max: 12.0
+  noise_stddev: 0.02
